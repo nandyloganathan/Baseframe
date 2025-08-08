@@ -2,6 +2,7 @@ package Pages;
 
 import Utils.Utilities;
 import org.openqa.selenium.By;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,6 +20,8 @@ public class Login {
 
     public void login() throws InterruptedException {
         String URL = Utilities.getProperty("URL");
+
+        driver.get(URL);
         try{
         
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));

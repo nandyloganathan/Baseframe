@@ -33,17 +33,7 @@ public class Formfill {
             } else {
                 throw new ElementNotInteractableException("The 'Create a Request' button is not interactable.");
             }
-         
-            
-            
-//            //Thread.sleep(5000);
-//            
-//            WebElement form = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[class='_dialog-body-container-primary_1387h_17 w-[960px] h-auto")));
-//            form.isDisplayed();
-            
-            
-         // Wait for the form container to be visible
-            //Thread.sleep(15000);
+
             WebElement form = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.cssSelector("div[class='_dialog-body-container-primary_1387h_17 w-[960px] h-auto']")
             ));
@@ -89,22 +79,17 @@ public class Formfill {
          }
          vendername.click();
          vendername.sendKeys("Salesforce");
-         
-        //headlessui-listbox-option-:rhq:
-//         Thread.sleep(10000);
-//         WebElement selctvendor = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("headlessui-listbox-option-:rhq:")));
-//         selctvendor.click();
+
          
          List<WebElement> drop =wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.id("headlessui-listbox-option-:r92:"),0));
-//         drop.get(2).click();
-//         drop.get(2).click();
+
          
          WebElement firstsug = drop.get(0);
          Actions action = new Actions(driver);
          //action.doubleClick(firstsug).perform();
          action.click(firstsug).perform();
          
-         String filepath = "/home/nandhini.l/eclipse-workspace/learningone/src/test/java/TestData/Screenshot from 2025-08-08 10-30-30.png";
+         String filepath = System.getProperty("user.dir")+"/src/main/resources/TestData/images.png";
          
          WebElement fileupload = driver.findElement(By.xpath("//input[@type='file']"));
          //fileupload.click();
